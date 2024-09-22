@@ -22,10 +22,10 @@ jobs:
         xcode-version: '15.4.0'
 
     - name: Build app
-      run: xcodebuild -scheme MyApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0' build
+      run: xcodebuild -scheme MyApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=17.0' build
 
     - name: Run tests
-      run: xcodebuild test -scheme MyApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.0'
+      run: xcodebuild test -scheme MyApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=17.0'
 
     - name: Archive app
       run: xcodebuild -scheme MyApp archive -archivePath MyApp.xcarchive
