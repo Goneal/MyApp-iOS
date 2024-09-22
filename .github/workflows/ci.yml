@@ -1,0 +1,31 @@
+name: iOS CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Xcode
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: '13.2.1'
+
+    - name: Build app
+      run: xcodebuild -scheme MyApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 13,OS=15.2' build
+
+    - name: Run tests
+      run: xcodebuild test -scheme MyApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 13,OS=15.2'
+
+    - name: Archive app
+      run: xcodebuild -scheme MyApp archive -archivePath MyApp.xcarchive
