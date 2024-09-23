@@ -6,7 +6,7 @@ This repository contains the AI model for generating Swift code for iOS applicat
 
 1. **Clone the Repository**
    ```bash
-   git clone [repository_url]
+   git clone https://github.com/Goneal/AI-iOS-Model.git
    cd AI-iOS-Model
    ```
 
@@ -21,13 +21,19 @@ This repository contains the AI model for generating Swift code for iOS applicat
 1. **Initialize the Model**
    Use the provided script to initialize the model and tokenizer:
    ```bash
-   python initialize_model.py
+   python select_and_initialize_model.py
    ```
 
 2. **Generate Code Snippets**
    Run the script to generate Swift code snippets based on input prompts:
    ```bash
-   python generate_code.py --prompt "Write a Swift function to reverse a string."
+   python generate_code_for_tasks.py --prompt "Write a Swift function to reverse a string."
+   ```
+
+3. **Tokenize Code**
+   Use the script to tokenize Swift code for model training:
+   ```bash
+   python tokenize_code.py
    ```
 
 ## Contribution
